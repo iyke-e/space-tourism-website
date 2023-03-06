@@ -1,0 +1,155 @@
+@use "../utils/" as *;
+
+.crew {
+  main {
+    @include breakpoint(medium) {
+      grid-template-rows: 15% auto;
+    }
+    @include breakpoint(mlarge) {
+      max-height: rem(700);
+      height: 100% !important;
+      grid-template-rows: 20% auto;
+    }
+    @include breakpoint(large) {
+      position: relative;
+      max-height: 86.5vh;
+    }
+  }
+
+  .nav {
+    display: flex;
+    gap: rem(24);
+    margin-block: rem(32);
+    align-self: center;
+
+    @include breakpoint(mlarge) {
+      align-self: start;
+      margin-block-start: rem(50);
+    }
+    @include breakpoint(large) {
+      margin-block-start: min(15%, rem(100));
+    }
+
+    a {
+      display: inline-block;
+      height: rem(15);
+      width: rem(15);
+      background-color: var(--white);
+      border-radius: 50%;
+      mix-blend-mode: normal;
+      opacity: 0.17;
+
+      &:hover,
+      &.active {
+        opacity: 1;
+      }
+    }
+  }
+  .crew-txt-wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: center;
+    @include breakpoint(medium) {
+      flex-direction: column;
+    }
+    @include breakpoint(mlarge) {
+      text-align: start;
+    }
+  }
+  .crew-subpage {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+
+    @include breakpoint(medium) {
+      flex-direction: column-reverse;
+      text-align: start;
+      align-self: start !important;
+      justify-self: start;
+    }
+
+    @include breakpoint(mlarge) {
+      flex-direction: row-reverse;
+      align-self: center !important;
+    }
+  }
+  .crew-img-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    @include breakpoint(mlarge) {
+      width: 40%;
+    }
+  }
+  .crew-img {
+    height: rem(250);
+    width: 100%;
+    object-fit: contain;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    @include breakpoint(medium) {
+      position: absolute;
+      border: none;
+      height: 90%;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+    }
+    @include breakpoint(mlarge) {
+      width: fit-content;
+      left: initial;
+      right: 0;
+      height: 80%;
+      top: 100%;
+      transform: translateY(-100%);
+    }
+
+    @include breakpoint(large) {
+      height: auto;
+    }
+  }
+  .crew-txt {
+    height: rem(220);
+    margin-block-end: rem(30);
+
+    @include breakpoint(medium) {
+      margin-block-end: rem(10);
+    }
+
+    @include breakpoint(mlarge) {
+      height: rem(280);
+    }
+  }
+  p {
+    max-width: rem(350);
+
+    @include breakpoint(medium) {
+      max-width: rem(500);
+    }
+    @include breakpoint(mlarge) {
+      max-width: rem(444);
+    }
+  }
+  h5 {
+    @include breakpoint(mlarge) {
+      padding-block: rem(50);
+    }
+  }
+
+  h4 {
+    margin-block-end: rem(15);
+  }
+  h3 {
+    margin-block-end: rem(15);
+    @include breakpoint(medium) {
+      margin-block-end: rem(27);
+    }
+    @include breakpoint(mlarge) {
+      margin-block-end: rem(32);
+    }
+  }
+}

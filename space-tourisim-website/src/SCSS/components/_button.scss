@@ -1,0 +1,31 @@
+@use "../utils/" as *;
+
+.button {
+  display: grid;
+  place-content: center;
+  width: rem(150);
+  height: rem(150);
+  border-radius: 50%;
+  background-color: var(--white);
+  color: var(--black);
+  outline: transparent;
+  border: transparent;
+  font-size: rem(20);
+  font-weight: 400;
+  font-family: var(--fontBellefair);
+  cursor: pointer;
+
+  @include breakpoint(medium) {
+    width: rem(274);
+    height: rem(274);
+    font-size: rem(32);
+  }
+
+  @include breakpoint(large) {
+    position: relative;
+    transition: 0.3s ease-in-out;
+    &:hover {
+      box-shadow: 0 0 0 88px hsla(0, 1%, 100%, 0.1);
+    }
+  }
+}

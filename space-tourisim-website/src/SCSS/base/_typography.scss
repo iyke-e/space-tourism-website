@@ -1,0 +1,112 @@
+@use "../utils/" as *;
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600&family=Barlow:wght@400;500;600&family=Bellefair&display=swap");
+body {
+  color: var(--white);
+}
+h1 {
+  font-size: rem(80);
+  font-family: var(--fontBellefair);
+  font-weight: 400;
+  @include breakpoint(medium) {
+    font-size: rem(150);
+  }
+}
+h2 {
+  font-size: rem(56);
+  font-weight: 400;
+  text-align: center;
+  font-family: var(--fontBellefair);
+  @include breakpoint(medium) {
+    font-size: rem(80);
+  }
+  @include breakpoint(mlarge) {
+    font-size: rem(100);
+    text-align: start;
+  }
+}
+h3 {
+  font-size: rem(24);
+  font-weight: 400;
+  font-family: var(--fontBellefair);
+  text-transform: uppercase;
+
+  @include breakpoint(medium) {
+    font-size: rem(40);
+  }
+  @include breakpoint(mlarge) {
+    font-size: rem(50);
+  }
+  @include breakpoint(large) {
+    font-size: rem(56);
+  }
+}
+h4 {
+  font-size: rem(16);
+  font-weight: 400;
+  font-family: var(--fontBellefair);
+  text-transform: uppercase;
+  @include breakpoint(medium) {
+    font-size: rem(24);
+  }
+  @include breakpoint(mlarge) {
+    font-size: rem(28);
+    text-align: start;
+  }
+  @include breakpoint(large) {
+    font-size: rem(32);
+    text-align: start;
+  }
+}
+h5 {
+  font-size: rem(16);
+  font-weight: 400;
+  font-family: var(--fontBarlowCondensed);
+  color: var(--lightBlue);
+  text-align: center;
+  letter-spacing: 3.375px;
+
+  @include breakpoint(medium) {
+    font-size: rem(20);
+  }
+  @include breakpoint(mlarge) {
+    font-size: rem(24);
+    text-align: start;
+  }
+  @include breakpoint(large) {
+    font-size: rem(28);
+  }
+}
+
+a {
+  font-family: var(--fontBarlowCondensed);
+  font-size: rem(16);
+  letter-spacing: rem(2.7);
+  color: var(--white);
+  text-transform: uppercase;
+}
+
+p {
+  font-size: rem(15);
+  font-family: var(--fontBarlow);
+  line-height: rem(25);
+  color: var(--lightBlue);
+  font-weight: 400;
+  text-align: center;
+  @include breakpoint(mlarge) {
+    text-align: start;
+    font-size: rem(18);
+    line-height: rem(32);
+  }
+}
+.sub-heading-1 {
+  font-size: rem(16);
+  font-family: var(--fontBellefair);
+  @include breakpoint(medium) {
+    font-size: rem(28);
+  }
+}
+.sub-heading-2 {
+  font-size: rem(14);
+  letter-spacing: rem(2.365);
+  font-family: var(--fontBarlowCondensed);
+}

@@ -1,0 +1,142 @@
+@use "../utils/" as *;
+
+header {
+  display: flex;
+  padding-top: rem(24);
+  padding-inline: rem(24);
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+
+  @include breakpoint(medium) {
+    padding-top: 0;
+    padding-inline: rem(39) 0;
+  }
+
+  @include breakpoint(large) {
+    padding-top: rem(20);
+  }
+
+  @include breakpoint(xlarge) {
+    padding-top: rem(40);
+    padding-inline: rem(55) 0;
+  }
+
+  a {
+    color: var(--white);
+
+    @include breakpoint(medium) {
+      position: relative;
+      &.active,
+      &:hover {
+        transition: all 3s;
+        &::before {
+          content: "";
+          display: inline-block;
+          width: 100%;
+          height: 2px;
+          background-color: var(--white);
+          position: absolute;
+          bottom: -(rem(36));
+          left: 0;
+          animation: spreadout 0.5s;
+        }
+      }
+    }
+  }
+
+  img {
+    object-fit: contain;
+  }
+
+  .logo {
+    width: rem(40);
+  }
+
+  .hamburger {
+    width: rem(24);
+    position: inherit;
+    z-index: 2;
+
+    @include breakpoint(medium) {
+      display: none;
+    }
+  }
+
+  nav {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: -100%;
+    background-color: var(--transparentWhite);
+    width: 70%;
+    height: 100vh;
+    backdrop-filter: blur(40.7742px);
+    padding-top: rem(118);
+    padding-inline: rem(32);
+    transition: all 1s ease-in-out;
+    z-index: 1;
+
+    &.open {
+      right: 0;
+    }
+
+    @include breakpoint(medium) {
+      display: flex;
+      width: initial;
+      height: initial;
+      position: relative;
+      right: 0;
+      padding-block: rem(39);
+      padding-inline: rem(48) rem(46);
+      transition: none;
+    }
+
+    @include breakpoint(xlarge) {
+      padding-inline: rem(123) rem(165);
+    }
+
+    ul {
+      display: grid;
+      gap: rem(32);
+
+      @include breakpoint(medium) {
+        display: inherit;
+        gap: rem(37);
+      }
+
+      @include breakpoint(large) {
+        position: relative;
+        &::after {
+          content: "";
+          display: inline-block;
+          height: 1px;
+          width: rem(473);
+          position: absolute;
+          background-color: var(--white);
+          opacity: 0.25;
+          mix-blend-mode: normal;
+          left: -95%;
+          top: 50%;
+        }
+      }
+
+      @include breakpoint(xlarge) {
+        gap: rem(52);
+      }
+      span {
+        display: inline;
+        margin-inline-end: rem(11);
+        font-weight: 500;
+
+        @include breakpoint(medium) {
+          display: none;
+        }
+
+        @include breakpoint(large) {
+          display: inline;
+        }
+      }
+    }
+  }
+}

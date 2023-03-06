@@ -1,0 +1,140 @@
+@use "../utils/" as *;
+
+.technology {
+  main {
+    display: grid;
+    gap: rem(40);
+    height: 90%;
+    text-align: center;
+    @include breakpoint(mlarge) {
+      width: 100vw;
+      min-height: rem(700);
+      grid-template-rows: 15% auto;
+    }
+
+    @include breakpoint(large) {
+      height: 80%;
+    }
+  }
+
+  picture {
+    height: fit-content;
+    width: 100%;
+    display: block;
+
+    img {
+      width: 100vw;
+
+      @include breakpoint(mlarge) {
+        height: rem(350);
+        width: fit-content;
+        object-fit: contain;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      @include breakpoint(large) {
+        height: min(rem(500), 60vh);
+      }
+    }
+  }
+
+  .nav {
+    display: flex;
+    gap: rem(16);
+    align-items: center;
+    justify-content: center;
+    margin-block: rem(34) rem(26);
+
+    @include breakpoint(medium) {
+      margin-block: rem(56) rem(44);
+    }
+
+    @include breakpoint(mlarge) {
+      flex-direction: column;
+      margin-block: 0;
+      gap: rem(32);
+    }
+    a {
+      display: grid;
+      place-items: center;
+      width: rem(40);
+      height: rem(40);
+      border-radius: 50%;
+      border: 1px solid hsla(0, 1%, 100%, 0.25);
+      mix-blend-mode: normal;
+      font-size: rem(16);
+      font-family: var(--fontBellefair);
+      @include breakpoint(medium) {
+        width: rem(60);
+        height: rem(60);
+      }
+
+      @include breakpoint(mlarge) {
+        font-size: rem(24);
+        font-weight: 400;
+      }
+
+      &.active,
+      &:hover {
+        background-color: var(--white);
+        color: var(--black);
+      }
+    }
+  }
+
+  .tech-subpage {
+    @include breakpoint(mlarge) {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: center;
+      text-align: start;
+      position: relative;
+      width: 100vw;
+      padding-inline-start: rem(54);
+      height: 60vh;
+      align-self: center;
+    }
+  }
+
+  .tech-txt-wrapper {
+    margin-inline: rem(24);
+    height: rem(350);
+    grid-area: txt;
+    @include breakpoint(mlarge) {
+      margin-inline: 0;
+      display: inherit;
+      gap: rem(50);
+      flex-basis: 150%;
+      align-items: start;
+    }
+    @include breakpoint(large) {
+      gap: rem(80);
+    }
+  }
+
+  h3 {
+    margin-block: rem(9) rem(16);
+  }
+  h5 {
+    padding-block: rem(20);
+    @include breakpoint(medium) {
+      padding-block: rem(20) rem(40);
+      padding-inline-start: rem(54);
+    }
+    @include breakpoint(mlarge) {
+      padding-block: rem(50);
+    }
+    span {
+      margin-inline-end: rem(20);
+      mix-blend-mode: normal;
+      opacity: 0.25;
+    }
+  }
+  p {
+    max-width: rem(444);
+    margin-inline: auto;
+  }
+}

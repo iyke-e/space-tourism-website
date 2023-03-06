@@ -1,0 +1,51 @@
+@use "../utils/" as *;
+.home {
+  main {
+    display: grid;
+    place-items: center;
+    padding-inline: rem(24);
+    gap: rem(81);
+    padding-block: rem(40);
+    position: relative;
+    height: 90%;
+
+    @include breakpoint(mlarge) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 75%;
+      padding-inline: rem(100);
+    }
+    @include breakpoint(large) {
+      padding-inline: rem(165);
+      align-items: end;
+    }
+  }
+
+  h1 {
+    padding-block: rem(20);
+    @include breakpoint(medium) {
+      padding-block: rem(20);
+    }
+  }
+
+  .text-area {
+    max-width: rem(450);
+    text-align: center;
+    p {
+      text-align: center;
+      br {
+        display: none;
+        @include breakpoint(medium) {
+          display: initial;
+        }
+      }
+      @include breakpoint(mlarge) {
+        text-align: left;
+      }
+    }
+    @include breakpoint(mlarge) {
+      text-align: left;
+    }
+  }
+}
