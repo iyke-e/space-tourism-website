@@ -1,12 +1,16 @@
 @use "../utils/" as *;
 
-:is(.home, .destination, .crew, .technology) {
-  height: 100vh;
-  min-height: 100vh;
-  background-position: center;
-  background-size: cover;
+.home,
+.destination,
+.crew,
+.technology {
+  height: 100dvh;
+  min-height: 100dvh;
   position: relative;
   overflow-x: hidden;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
 }
 
 body {
@@ -20,9 +24,7 @@ body {
 
 .home {
   background: url(/src/assets/homeAssets/background-home-mobile.jpg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+
   @include breakpoint(medium) {
     background: url(/src/assets/homeAssets/background-home-tablet.jpg);
   }
@@ -33,9 +35,6 @@ body {
 
 .destination {
   background-image: url(/src/assets/destinationAssets/background-destination-mobile.jpg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
 
   @include breakpoint(medium) {
     background-image: url(/src/assets/destinationAssets/background-destination-tablet.jpg);
@@ -48,9 +47,6 @@ body {
 
 .crew {
   background-image: url(/src/assets/crewAssets/background-crew-mobile.jpg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
 
   @include breakpoint(medium) {
     background-image: url(/src/assets/crewAssets/background-crew-tablet.jpg);
@@ -63,9 +59,7 @@ body {
 
 .technology {
   background-image: url(/src/assets/technologyAssets/background-technology-mobile.jpg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+
   @include breakpoint(medium) {
     background-image: url(/src/assets/technologyAssets/background-technology-tablet.jpg);
   }
